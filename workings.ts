@@ -19,16 +19,16 @@ function solution(T: Tree): number {
     maxZigzag = Math.max(maxZigzag, length);
 
     if (isLeft) {
-      dfs(node.l, false, length + 1); // Switch direction
-      dfs(node.r, true, 1); // Reset zigzag
+      dfs(node.l, false, length + 1); 
+      dfs(node.r, true, 1); 
     } else {
-      dfs(node.r, true, length + 1); // Switch direction
-      dfs(node.l, false, 1); // Reset zigzag
+      dfs(node.r, true, length + 1);
+      dfs(node.l, false, 1); 
     }
   };
 
-  if (T.l) dfs(T.l, false, 1); // Start zigzag to the left
-  if (T.r) dfs(T.r, true, 1); // Start zigzag to the right
+  if (T.l) dfs(T.l, false, 1); 
+  if (T.r) dfs(T.r, true, 1);
 
   return maxZigzag;
 }
